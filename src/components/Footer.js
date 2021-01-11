@@ -5,9 +5,10 @@ import Col from "react-bootstrap/Col";
 import Ig from "../multimedia/ig.png"
 import Face from "../multimedia/facebook.png"
 import Tw from "../multimedia/tw.png"
-import Container from "react-bootstrap/Container";
+
 
 function Footer(){
+    
     return(
         <div className="footer container-fluid">
             

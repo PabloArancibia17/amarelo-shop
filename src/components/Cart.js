@@ -1,4 +1,4 @@
-﻿import React, {useContext, useEffect, useState} from "react";
+﻿import React, {useContext, useState} from "react";
 import firebase from "firebase/app"
 import "firebase/firestore"
 import {Link} from "react-router-dom"
@@ -14,20 +14,25 @@ function Cart() {
     const [items] = useContext(CartContext)
     const [order, setOrder] = useState(false)
     const [orderId, setOrderId] = useState("")
+    
     var totalPrice = 0;
-    var dateOrder = new Date();
-    var date = dateOrder.getDate() + "/" + (dateOrder.getMonth()+ 1) + "/" + dateOrder.getFullYear()
+    var dateOrder = new Date();    
+    
     const [inputName, setInputName] = useState("")
     const [inputMail, setInputMail] = useState("")
     const [inputCell, setInputCell] = useState("")
 
 
-
+    //Setting date
+    var date = dateOrder.getDate() + "/" + (dateOrder.getMonth()+ 1) + "/" + dateOrder.getFullYear()
+    
+    //Stablish total price
     for (var i = 0; i < items.length; i++) {
         totalPrice += items[i].price * items[i].counter;
         
     }    
 
+    //Getting data from firebase
     const addOrder = () => {
         const db = getFirestore();
 
@@ -53,6 +58,7 @@ function Cart() {
         })
     };    
 
+    //Back to Home if don't have products on cart
     if (items.length === 0) {
         return (
             <div className="page-container" style={{padding: "10px"}}>
@@ -67,7 +73,7 @@ function Cart() {
         )
     }
 
-
+    
     if (order === false) {
         return (
 

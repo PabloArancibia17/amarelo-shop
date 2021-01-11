@@ -1,10 +1,9 @@
-﻿import React, {useEffect, useState, useContext} from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import {Redirect, Link, NavLink, useParams} from "react-router-dom";
 import BuyIcon from "./BuyIcon";
 import Card from 'react-bootstrap/Card'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/cjs/Container";
 import {getFirestore} from "../firebase/index"
 import cartImg from "../multimedia/cartImg.png";
@@ -13,9 +12,7 @@ import cartImg from "../multimedia/cartImg.png";
 function Item() {  
     
     const {id} = useParams()    
-    const [itemStock, setItemStock] = useState([]);   
-
-    console.log(id);
+    const [itemStock, setItemStock] = useState([]);
 
     const [contador, setContador] = useState(0);   
     const [item, setItem] = useState([]);
@@ -23,7 +20,7 @@ function Item() {
     const [goHome, setGoHome]  = useState(false);
     
 
-    let minItem = 0;  
+    let minItem = 0;
 
 
     useEffect(() => {
@@ -31,10 +28,10 @@ function Item() {
         const db = getFirestore();
         const itemCollection = db.collection("products")
         const item = itemCollection.doc(id);
-        
-        
+
+
         item.get().then((doc) => {
-            if(!doc.exists){
+            if (!doc.exists) {
                 alert("Item doesn't exist! Please check your ID");
                 setGoHome(true)
                 return
@@ -44,20 +41,19 @@ function Item() {
                 id: doc.id,
                 ...doc.data()
             }
-            
+
             ])
             setItemStock(doc.data().stock);
-            
+
         }).catch(error => {
             console.log("Error", error)
         }).finally(() =>
             setLoading(false));
-                  
-        
+
     }, [])
 
     
-
+    //Setting counter
     const addCount = () => {
 
         if (contador < itemStock) {
@@ -72,6 +68,7 @@ function Item() {
         }
     };
 
+    //Stock unavailable
     if (itemStock === 0) {
         return (
             <div style={{height: "80vh"}} className="d-flex align-items-center justify-content-center">

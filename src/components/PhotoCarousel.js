@@ -1,5 +1,4 @@
 ﻿import Carousel from 'react-bootstrap/Carousel';
-import Image from 'react-bootstrap/Image'
 import barbijoPic1 from "../multimedia/yogaLogo.jpg"
 import barbijoPic2 from "../multimedia/yoga1.jpg"
 import barbijoPic3 from "../multimedia/yogaShirt.jpg"

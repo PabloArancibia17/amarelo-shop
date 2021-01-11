@@ -1,11 +1,8 @@
-﻿import React, {useContext, useEffect, useState} from "react";
-import {Link, NavLink, useParams} from "react-router-dom";
+﻿import React, { useEffect, useState } from "react";
+import { NavLink, useParams} from "react-router-dom";
 import {getFirestore} from "../firebase/index"
-import {CartContext} from "../context/cartContext";
-import Item from "./Item";
 import CardGroup from "react-bootstrap/CardGroup";
 import Card from "react-bootstrap/Card";
-import Placeholder from "../multimedia/IMG-20190621-WA0050.jpg";
 import PhotoCarousel from "./PhotoCarousel";
 
 
@@ -13,10 +10,9 @@ function Catalog() {
     const [loading, setLoading] = useState(false)
     const [items, setItems] = useState([]);
     const {id} = useParams()
-
     
-    console.log(id)
 
+    //Getting data from firebase
     useEffect(() => {
         setLoading(true);
         const db = getFirestore();
@@ -36,7 +32,6 @@ function Catalog() {
             setLoading(false));
     }, []);
     
-    console.log(items)
 
     return (
         <div>

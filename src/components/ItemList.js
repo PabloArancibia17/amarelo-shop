@@ -1,5 +1,5 @@
-﻿import React, {useContext, useEffect, useState} from "react";
-import {Link, NavLink} from "react-router-dom";
+﻿import React, { useEffect, useState } from "react";
+import {NavLink} from "react-router-dom";
 import {getFirestore} from "../firebase/index"
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
@@ -10,11 +10,10 @@ import CardGroup from 'react-bootstrap/CardGroup'
 function ItemList() {
     
     const [loading, setLoading] = useState(false)
-    const [items, setItems] = useState([]);    
-    const [pic, setPic] = useState(0)
+    const [items, setItems] = useState([]);      
     
     
-
+    //Getting data from firebase
     useEffect(() => {
         setLoading(true);
         const db = getFirestore();        

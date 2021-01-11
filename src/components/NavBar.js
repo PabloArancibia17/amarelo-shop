@@ -13,11 +13,9 @@ const NavBar = () => {
 
     const [loading, setLoading] = useState(false)
     const [items, setItems] = useState([]);
-    var oldId = null;
-    //refreshPage()
 
     
-
+    //Getting data from firebase
     useEffect(() => {
         setLoading(true);
         const db = getFirestore();
@@ -36,10 +34,6 @@ const NavBar = () => {
             setLoading(false));
             
     }, []);
-
-    function refreshPage() {        
-            window.location.reload(false);       
-    }
 
     return (
         <div className="myNav">

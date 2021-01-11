@@ -1,6 +1,6 @@
-﻿import React, {useContext, useEffect, useState} from "react";
-import {CartContext, CartProvider} from "../context/cartContext"
-import Cart from "../components/Cart"
+﻿import React, {useContext} from "react";
+import {CartContext} from "../context/cartContext"
+
 
 
 const BuyIcon = (props) => {
@@ -10,8 +10,7 @@ const BuyIcon = (props) => {
     function savedItemDetails(){
         
         if(props.counter !== 0) {
-            setItemContext(newItem => [...newItem, props])
-            console.log(props)
+            setItemContext(newItem => [...newItem, props])            
         }
     }
     
