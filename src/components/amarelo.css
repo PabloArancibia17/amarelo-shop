@@ -1,0 +1,45 @@
+﻿body{
+    background-color: white;
+}
+
+.myHeader{
+    font-family: "Times New Roman", sans-serif;
+    font-size: xx-large;
+    color: yellow;    
+}
+
+.myNav{
+    background: white;    
+    text-decoration: yellow;    
+}
+
+.footer{
+    background: navajowhite;
+    font-size: small;
+    margin: 1px;
+    padding-top: 5px;
+    padding-bottom: 0;
+    line-height: 10px;
+    bottom: 0;    
+}
+
+.dropdown{
+    background: none;
+    color: gray;
+    border: none;
+}
+
+.dropdown:hover{
+    background: yellow;
+}
+
+.dropdownItem{
+    text-decoration: none;
+    color: yellow;    
+}
+
+.dropdownItem:hover{
+    background: yellow;
+}
+
+
