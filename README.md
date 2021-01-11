@@ -36,4 +36,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 #Project contributions
 
-(Not established yet...)
+- Al subirse a git el proyecto sin los "nodes" de React, no es posible levantar la página desde GitHub Pages. Es necesario contratar un servidor.
+- Para poder correr correctamente el proyecto es necesario acceder al FIREBASE del proyecto. Allí se encuentran alojados tanto el inventario del proyecto como las imágenes. 
+La cuenta del proyecto está linkeada a mi cuenta de Google, por lo que es necesario pedir dichos datos al administrador.
+- Cualquier otra consulta escribir a [parancibia.017@gmail.com].
